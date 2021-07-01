@@ -25,7 +25,6 @@ eLibro* libro_new(void)
         strcpy(libro->titulo, "");
         strcpy(libro->autor, "");
         libro->precio = 0;
-        libro->editorialId.id = 0;
         strcpy(libro->editorialId.editorial,"");
     }
     return libro;
