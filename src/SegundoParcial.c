@@ -15,14 +15,11 @@ int main()
 
     controller_loadFromText(path,pArrayLibros);
     printf("El archivo se ha cargado exitosamente.\n");
-    system("pause");
 
     if(ll_sort(pArrayLibros,criterioAutor,1) == 0)
     {
         controller_ListLibro(pArrayLibros);
     }
-
-    system("pause");
 
     if(ll_map(pArrayLibros,descuentoLibro))
     {

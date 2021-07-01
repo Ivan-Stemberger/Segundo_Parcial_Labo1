@@ -6,16 +6,17 @@
 #include "Controller.h"
 
 
-/** \brief Parsea los datos los datos de los empleados desde el archivo de texto pFile.
+/** \brief Parsea los datos los datos de los libros desde el archivo de texto pFile.
  *
- * \param path char*
- * \param pArrayListcorredor LinkedList*
- * \return int
+ * \param pFile FILE* puntero al archivo de texto
+ * \param pArrayListLibro LinkedList* listado de libros
+ * \return parsed int 1 si funcionó, 0 si no.
  *
  */
 int parser_LibroFromText(FILE* pFile , LinkedList* pArrayListLibro)
 {
-    int cantidad = 0;
+    int parsed = 0;
+	int cantidad = 0;
     char idStr[10];
     char tituloStr[52];
     char autorStr[52];
@@ -47,13 +48,13 @@ int parser_LibroFromText(FILE* pFile , LinkedList* pArrayListLibro)
             }
         }
     fclose(pFile);
-    return 1;
+    parsed = 1;
     }
     else
     {
         printf("No hay archivo.\n");
         system("pause");
-        return 0;
-    }
 
+    }
+    return parsed;
 }
